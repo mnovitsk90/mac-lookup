@@ -7,7 +7,6 @@ import (
 	"log"
     "net/url"
 	"net/http"
-	// "encoding/json"
 )
 
 func getInputMac() string {
