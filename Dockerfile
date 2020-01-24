@@ -1,14 +1,17 @@
-# iron/go:dev is the alpine image with the go tools added
-FROM iron/go:dev
+# base golang with linux to build go module
+FROM golang:alpine AS build
 
-WORKDIR /app
+RUN mkdir /src
 
-# Set an env var that matches your github repo name
-ENV SRC_DIR=/mac-lookup
+ADD macLookup.go /src
 
-# Add the source code:
-ADD . $SRC_DIR
+RUN cd /src && \
+    go build -o getMac ./macLookup.go
 
-# Build it:
-RUN cd $SRC_DIR; go build -o getMac ./macLookup.go; cp ./getMac /app/
+FROM alpine
+
+WORKDIR /bin
+
+COPY --from=build /src/getMac /bin
+
 ENTRYPOINT ["./getMac"]
