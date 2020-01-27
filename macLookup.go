@@ -15,9 +15,10 @@ func getInputMac() string {
 	
 	if len(os.Args) > 1 {
 		inputMac = os.Args[1]
-		fmt.Printf("Mac Address supplied: %s\n", inputMac)
+		// fmt.Printf("Mac Address supplied: %s\n", inputMac)
 	} else {
-    	fmt.Printf("No Mac Address supplied, using default: %s\n", inputMac)
+		// fmt.Printf("No Mac Address supplied, using default: %s\n", inputMac)
+		inputMac = "44:38:39:ff:ef:57"
   	}
 
   	return inputMac
@@ -46,7 +47,7 @@ func buildUrl() string {
 	params.Add("apikey", macApiKey)
 	params.Add("output", "vendor")
 
-	fmt.Printf("Querying: %s\n", baseUrl)
+	// fmt.Printf("Querying: %s\n", baseUrl)
 
 	baseUrl.RawQuery = params.Encode()
 	
@@ -71,13 +72,14 @@ func getMacInfo(queryUrl string) string {
 }
 
 func main() {
-	fmt.Printf("\nBeginning Execution\n\n")
+	// fmt.Printf("\nBeginning Execution\n\n")
 
 	testUrl := buildUrl()
 
-	//fmt.Printf("Query URL built: %s\n", testUrl)
+	// fmt.Printf("Query URL built: %s\n", testUrl)
 
 	macReturn := getMacInfo(testUrl)
 
-	fmt.Printf("Vendor: %s\n", macReturn)
+	// fmt.Printf("Vendor: %s\n", macReturn)
+	fmt.Printf("%s", macReturn)
 }

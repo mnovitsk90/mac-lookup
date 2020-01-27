@@ -25,12 +25,7 @@ $ ./getMac "<MAC Address>"
 
 ```
 $ ./getMac "44:38:39:ff:ef:57"
-
-Beginning Execution
-
-Mac Address supplied: 44:38:39:ff:ef:57
-Querying: https://api.macaddress.io/v1
-Vendor: Cumulus Networks, Inc
+Cumulus Networks, Inc
 ```
 
 ## Docker:
@@ -46,10 +41,5 @@ $ docker run -emacApiKey=$macApiKey "<MAC Address>"
 $ docker build -t maclookup:1.0 .
 
 $ docker run -emacApiKey=$macApiKey maclookup:1.0 "44:38:39:ff:ef:57"
-
-Beginning Execution
-
-Mac Address supplied: 44:38:39:ff:ef:57
-Querying: https://api.macaddress.io/v1
-Vendor: Cumulus Networks, Inc
+Cumulus Networks, Inc
 ```
