@@ -81,5 +81,5 @@ func main() {
 	macReturn := getMacInfo(testUrl)
 
 	// fmt.Printf("Vendor: %s\n", macReturn)
-	fmt.Printf("%s", macReturn)
+	fmt.Printf("%s\n", macReturn)
 }
